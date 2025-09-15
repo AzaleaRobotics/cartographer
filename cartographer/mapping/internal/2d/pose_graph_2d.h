@@ -29,6 +29,7 @@
 #include "Eigen/Geometry"
 #include "absl/container/flat_hash_map.h"
 #include "absl/synchronization/mutex.h"
+#include "cartographer/common/thread_annotations.h"
 #include "cartographer/common/fixed_ratio_sampler.h"
 #include "cartographer/common/thread_pool.h"
 #include "cartographer/common/time.h"

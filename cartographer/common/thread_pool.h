@@ -26,6 +26,7 @@
 #include "absl/container/flat_hash_map.h"
 #include "absl/synchronization/mutex.h"
 #include "cartographer/common/task.h"
+#include "cartographer/common/thread_annotations.h"
 
 namespace cartographer {
 namespace common {

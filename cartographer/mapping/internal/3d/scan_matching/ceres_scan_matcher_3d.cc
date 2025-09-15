@@ -22,6 +22,8 @@
 
 #include "absl/memory/memory.h"
 #include "cartographer/common/internal/ceres_solver_options.h"
+#include "ceres/manifold.h"
+#include "ceres/autodiff_manifold.h"
 #include "cartographer/mapping/internal/3d/rotation_parameterization.h"
 #include "cartographer/mapping/internal/3d/scan_matching/intensity_cost_function_3d.h"
 #include "cartographer/mapping/internal/3d/scan_matching/occupied_space_cost_function_3d.h"
@@ -98,11 +100,11 @@ void CeresScanMatcher3D::Match(
   optimization::CeresPose ceres_pose(
       initial_pose_estimate, nullptr /* translation_parameterization */,
       options_.only_optimize_yaw()
-          ? std::unique_ptr<ceres::LocalParameterization>(
-                absl::make_unique<ceres::AutoDiffLocalParameterization<
+          ? std::unique_ptr<ceres::Manifold>(
+                absl::make_unique<ceres::AutoDiffManifold<
                     YawOnlyQuaternionPlus, 4, 1>>())
-          : std::unique_ptr<ceres::LocalParameterization>(
-                absl::make_unique<ceres::QuaternionParameterization>()),
+          : std::unique_ptr<ceres::Manifold>(
+                absl::make_unique<ceres::QuaternionManifold>()),
       &problem);
 
   CHECK_EQ(options_.occupied_space_weight_size(),

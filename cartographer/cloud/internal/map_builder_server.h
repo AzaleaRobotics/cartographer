@@ -19,6 +19,7 @@
 
 #include "async_grpc/execution_context.h"
 #include "async_grpc/server.h"
+#include "cartographer/common/thread_annotations.h"
 #include "cartographer/cloud/internal/local_trajectory_uploader.h"
 #include "cartographer/cloud/internal/map_builder_context_interface.h"
 #include "cartographer/cloud/map_builder_server_interface.h"

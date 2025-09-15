@@ -27,6 +27,7 @@
 #include "cartographer/common/internal/ceres_solver_options.h"
 #include "cartographer/common/histogram.h"
 #include "cartographer/common/math.h"
+#include "ceres/manifold.h"
 #include "cartographer/mapping/internal/optimization/ceres_pose.h"
 #include "cartographer/mapping/internal/optimization/cost_functions/landmark_cost_function_2d.h"
 #include "cartographer/mapping/internal/optimization/cost_functions/spa_cost_function_2d.h"
@@ -145,7 +146,7 @@ void AddLandmarkCostFunctions(
         C_landmarks->emplace(
             landmark_id,
             CeresPose(starting_point, nullptr /* translation_parametrization */,
-                      absl::make_unique<ceres::QuaternionParameterization>(),
+                      absl::make_unique<ceres::QuaternionManifold>(),
                       problem));
         // Set landmark constant if it is frozen.
         if (landmark_node.second.frozen) {

@@ -88,6 +88,9 @@ macro(google_initialize_cartographer_project)
     google_add_flag(GOOG_CXX_FLAGS "-Werror=return-type")
     google_add_flag(GOOG_CXX_FLAGS "-Werror=switch")
     google_add_flag(GOOG_CXX_FLAGS "-Werror=uninitialized")
+    
+    # Suppress false-positive maybe-uninitialized warnings from Eigen with newer GCC
+    google_add_flag(GOOG_CXX_FLAGS "-Wno-maybe-uninitialized")
 
     if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID MATCHES "AppleClang")
       google_add_flag(GOOG_CXX_FLAGS "-Wthread-safety")
