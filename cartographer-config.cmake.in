@@ -44,6 +44,6 @@ if(CARTOGRAPHER_HAS_GRPC)
    find_package(async_grpc ${QUIET_OR_REQUIRED_OPTION})
 endif()
 
-include("${CARTOGRAPHER_CMAKE_DIR}/CartographerTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/CartographerTargets.cmake")
 
 unset(QUIET_OR_REQUIRED_OPTION)

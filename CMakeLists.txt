@@ -379,7 +379,7 @@ configure_package_config_file(
 
 install(
   EXPORT CartographerExport
-  DESTINATION share/cartographer/cmake/
+  DESTINATION share/cartographer/
   FILE CartographerTargets.cmake
 )
 
