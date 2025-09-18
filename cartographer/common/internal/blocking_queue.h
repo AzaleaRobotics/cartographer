@@ -22,6 +22,7 @@
 #include <memory>
 
 #include "absl/synchronization/mutex.h"
+#include "cartographer/common/thread_annotations.h"
 #include "cartographer/common/port.h"
 #include "cartographer/common/time.h"
 #include "glog/logging.h"

@@ -28,6 +28,8 @@ sudo apt-get install -y \
     libboost-all-dev \
     libcairo2-dev \
     libceres-dev \
+    libgtest-dev \
+    libgmock-dev \
     libcurl4-openssl-dev \
     libeigen3-dev \
     libgflags-dev \

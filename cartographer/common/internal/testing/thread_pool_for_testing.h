@@ -23,6 +23,7 @@
 #include <thread>
 
 #include "absl/synchronization/mutex.h"
+#include "cartographer/common/thread_annotations.h"
 #include "cartographer/common/thread_pool.h"
 
 namespace cartographer {

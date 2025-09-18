@@ -22,6 +22,7 @@
 #include "absl/synchronization/mutex.h"
 #include "glog/logging.h"
 #include "thread_pool.h"
+#include "cartographer/common/thread_annotations.h"
 
 namespace cartographer {
 namespace common {
